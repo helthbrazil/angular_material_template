@@ -1,0 +1,41 @@
+<mat-card>
+
+  <div style="float: right;">
+    <button matTooltip="Opções" mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button (click)="removerItem()" mat-menu-item>
+        <img class="img-menu" src="assets/images/svg/garbage.svg" width="20" alt="">
+        <span style="margin-left:10px" class="item-menu2">remover</span>
+      </button>
+      <button (click)="editarItem()" mat-menu-item>
+        <img class="img-menu" src="assets/images/svg/edit.svg" width="20" alt="">
+        <span style="margin-left:10px" class="item-menu2">Editar</span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <mat-list>
+    <!--   <div class="data">
+      <p>{{item.createdAt | date: 'dd/MM/yyyy HH:mm:ss'}}</p>
+    </div> -->
+    <h3 class="mat-3" mat-subheader>
+      <!-- <mat-icon mat-list-icon>vpn_key</mat-icon>
+      <pre mat-line> {{item.id}} </pre>
+      <br> -->
+      <h2> {{item.title}} </h2>
+
+    </h3>
+    <mat-list-item>
+      <mat-icon mat-list-icon>message</mat-icon>
+      <div class="content">
+        <p mat-line class="mat-5"> {{item.content}} </p>
+      </div>
+    </mat-list-item>
+
+
+  </mat-list>
+
+</mat-card>

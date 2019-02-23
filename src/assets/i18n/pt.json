@@ -1,0 +1,13 @@
+{
+  "titulo": "Exemplo de template angular",
+  "portugues": "português",
+  "ingles": "inglês",
+  "componentes": "componentes",
+  "cep": "buscar CEP",
+  "angular": "angular",
+  "sobre": "sobre",
+  "anotacoes": "anotações",
+  "remover": "remover",
+  "editar": "editar",
+  "dragDrop": "drag/drop"
+}

@@ -1,0 +1,12 @@
+<div class="master">
+  <!-- <app-toolbar></app-toolbar> -->  
+  <div class="padding">
+    <div *ngIf="showLoading.mostrar" >
+      <app-progress-bar [showLoading]="showLoading"></app-progress-bar>
+    </div>
+    <app-button [showLoading]="showLoading"></app-button>
+    <app-open-panel></app-open-panel>
+    <app-cards></app-cards>
+    <app-tabs></app-tabs>
+  </div>
+</div>

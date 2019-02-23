@@ -1,0 +1,10 @@
+.md-dialog-container {
+    background-color: #000;
+    min-width: 550px;
+    height: 250px
+}
+
+.center-text {
+    text-align: center;
+    display: block;
+}

@@ -1,0 +1,18 @@
+<div class='padding'>
+  <app-progress-bar class="padding" [showLoading]="showLoading"></app-progress-bar>
+  <div class="example-container">
+    <form id=formId (ngSubmit)="buscarCep()" #refForm="ngForm">
+      <mat-form-field>
+        <input matInput [textMask]="{mask: mask}" required [(ngModel)]="dados.cep" name="cep" placeholder="Input"
+          placeholder="Por favor informe o CEP">
+      </mat-form-field>
+      <br>
+      <button mat-raised-button [disabled]="!refForm.valid" type="submit" color="primary">{{'buscar cep' | uppercase}}
+      </button>
+    </form>
+  </div>
+</div>
+<p *ngIf="endereco"  class="padding">{{endereco?.logradouro}} , {{endereco?.bairro}}, {{endereco?.localidade}}, {{endereco?.uf}}</p>
+<div>
+
+</div>

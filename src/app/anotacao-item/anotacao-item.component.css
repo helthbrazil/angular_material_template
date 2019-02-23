@@ -1,0 +1,9 @@
+.data {
+  background-color: red;
+  width: 160px;
+  border-radius: 2px;
+}
+
+button>* {
+  vertical-align: middle;
+}

@@ -1,0 +1,7 @@
+<div class="center-text">
+  <h1 mat-dialog-title>{{titulo}}</h1>
+  <div mat-dialog-actions>
+    <button style="left:10px; margin:10px" mat-button (click)="onNoClick()">Não</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Sim</button>
+  </div>
+</div>

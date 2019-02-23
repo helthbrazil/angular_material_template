@@ -1,0 +1,11 @@
+<div>
+  <div style="display: block">
+    <div class="padding">
+      <button matBadgePosition="after" matBadgeColor="accent" mat-raised-button color="primary" (click)="randomize()">Random</button>
+    </div>
+    <div class="chart center">
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+        [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
+</div>

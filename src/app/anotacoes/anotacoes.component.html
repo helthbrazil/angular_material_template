@@ -1,0 +1,13 @@
+<div class="master">
+  <div class="padding">
+    <div *ngIf="showLoading.mostrar">
+      <app-progress-bar [showLoading]="showLoading"></app-progress-bar>
+      <p class="mat-h3">Buscando anotações</p>
+    </div>
+    <app-anotacao-item [anotacoesComponent]="this" class="padding" *ngFor="let item of anotacoes" [item]="item"></app-anotacao-item>
+
+    <button matTooltip="Adicionar Anotação" (click)="adicionarAnotacaoFake()" id="fab-note" mat-fab color="primary">
+      <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+    </button>
+  </div>
+</div>
