@@ -1,0 +1,51 @@
+<!-- <div class="padding">
+  <button matBadgePosition="after" matBadgeColor="accent" mat-raised-button color="primary"
+    (click)="randomize()">Random</button>
+</div>
+ -->
+<div class="padding master">
+  <mat-grid-list [cols]="breakpoint" rowHeight="2:2" (window:resize)="onResize($event)">
+
+    <mat-grid-tile>
+      <mat-card style="width: 100%; margin: 5px;">
+        <ngx-gauge foregroundColor="black" [type]="gaugeType" [value]="gaugeValue" [label]="gaugeLabel"
+          [append]="gaugeAppendText">
+        </ngx-gauge>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card style="width: 100%; margin: 5px;">
+        <ngx-gauge type="full" [value]="gaugeValue2" [label]="gaugeLabel2" [prepend]="gaugeAppendText2" cap="round"
+          thick="10">
+        </ngx-gauge>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card style="width: 100%; margin: 5px;">
+        <ngx-gauge foregroundColor="green" type="arch" [value]="gaugeValue3" [label]="gaugeLabel3"
+          [append]="gaugeAppendText3">
+        </ngx-gauge>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card style="width: 100%; margin: 5px;">
+        <ngx-gauge foregroundColor="red" [type]="gaugeType" [value]="gaugeValue4" [label]="gaugeLabel4"
+          [append]="gaugeAppendText4">
+        </ngx-gauge>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card style="width: 100%; margin: 5px;">
+        <ngx-gauge foregroundColor="green" type="arch" [value]="gaugeValue3" [label]="gaugeLabel3"
+          [append]="gaugeAppendText3">
+        </ngx-gauge>
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+</div>

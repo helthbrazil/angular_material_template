@@ -54,6 +54,11 @@ import { Grafico3Component } from './grafico3/grafico3.component';
 import { Grafico4Component } from './grafico4/grafico4.component';
 import { Grafico5Component } from './grafico5/grafico5.component';
 import { Grafico6Component } from './grafico6/grafico6.component';
+import { FluidComponent } from './fluid/fluid.component';
+import { NgxGaugeModule } from 'ngx-gauge';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxchartsComponent } from './ngxcharts/ngxcharts.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -93,7 +98,9 @@ import { Grafico6Component } from './grafico6/grafico6.component';
     Grafico3Component,
     Grafico4Component,
     Grafico5Component,
-    Grafico6Component
+    Grafico6Component,
+    FluidComponent,
+    NgxchartsComponent
   ],
   imports: [
     BrowserModule,
@@ -105,6 +112,9 @@ import { Grafico6Component } from './grafico6/grafico6.component';
     TextMaskModule,
     MaterialModule,
     HttpModule,
+    NgxChartsModule,
+    FlexLayoutModule,
+    NgxGaugeModule,
     ChartsModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,

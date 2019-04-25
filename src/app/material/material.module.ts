@@ -25,7 +25,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatChipsModule } from '@angular/material';
@@ -65,6 +65,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatTooltipModule,
     MatTableModule,
     MatSortModule,
+    MatGridListModule,
     MatPaginatorModule
   ],
   exports: [
@@ -97,6 +98,7 @@ import { MatSortModule } from '@angular/material/sort';
     DragDropModule,
     MatTooltipModule,
     MatTableModule,
+    MatGridListModule,
     MatSortModule,
     MatPaginatorModule
   ]

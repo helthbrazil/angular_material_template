@@ -31,7 +31,9 @@
               "src/styles.css",
               "src/styles-app-loading.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/fluid-min.js"
+            ]
           },
           "configurations": {
             "production": {
