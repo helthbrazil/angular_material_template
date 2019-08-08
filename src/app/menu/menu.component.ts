@@ -1,7 +1,7 @@
 import { TranslateService } from 'ng2-translate';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationStart } from '@angular/router';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import { throwError } from 'rxjs';
@@ -39,6 +39,59 @@ export class MenuComponent implements OnDestroy, OnInit {
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
+  routeEvent(router: Router) {
+    router.events.subscribe(e => {
+      if (e instanceof NavigationStart) {
+        console.log(e);
+        const url = e.url;
+        switch (url) {
+          case '/':
+          case '/demo':
+            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/demo');
+            break;
+
+          case '/busca_cep':
+            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/busca_cep');
+            break;
+
+          case '/angular_docs':
+            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/angular_docs');
+            break;
+
+          case '/anotacoes':
+            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/anotacoes');
+            break;
+
+          case '/drag_drop':
+            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/drag_drop');
+            break;
+
+          case '/diretivas':
+            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/diretivas');
+            break;
+
+          case '/tabelas':
+            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/tabelas');
+            break;
+
+          case '/graficos':
+            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/graficos');
+            break;
+
+          case '/sobre':
+            this.itemSelecionado = this.fillerNav.find(item => item.componente === '/sobre');
+            break;
+
+
+          default:
+            /* this.item = '/pessoa/detail'; */
+            break;
+        }
+      }
+    });
+  }
+
+
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
@@ -46,17 +99,7 @@ export class MenuComponent implements OnDestroy, OnInit {
   ngOnInit(): void {
     this.opened = true;
     this.itensMenu();
-    this.atualizarSelecionado();
-  }
-
-  atualizarSelecionado() {
-    setTimeout(() => {
-      const url = this.router.url;
-      const item = this.fillerNav.find(items => items.componente === url);
-      if (item) {
-        this.itemSelecionado = item;
-      }
-    }, 100);
+    this.routeEvent(this.router);
   }
 
   atualizarIdioma(cod: number) {
@@ -91,10 +134,6 @@ export class MenuComponent implements OnDestroy, OnInit {
 
   deslogar() {
 
-  }
-
-  selecionarItem(item: ItemMenu) {
-    this.itemSelecionado = item;
   }
 
   openBottomSheet(): void {

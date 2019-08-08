@@ -6,6 +6,8 @@
   color: #fff;
 }
 
+.display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+
 /* BUTTON */
 .mat-fab.mat-primary,
 .mat-flat-button.mat-primary,

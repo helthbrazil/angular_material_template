@@ -10,9 +10,10 @@ import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { DiretivasComponent } from './diretivas/diretivas.component';
 import { TabelasComponent } from './tabelas/tabelas.component';
 import { GraficosComponent } from './graficos/graficos.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/demo', pathMatch: 'full' },
+  { path: '', redirectTo: 'demo', pathMatch: 'full' },
   { path: 'demo', component: ComponentesComponent },
   { path: 'tabelas', component: TabelasComponent },
   { path: 'graficos', component: GraficosComponent },
@@ -23,6 +24,10 @@ const routes: Routes = [
   { path: 'drag_drop', component: DragDropComponent },
   { path: 'diretivas', component: DiretivasComponent },
   { path: 'anotacoes', component: AnotacoesComponent },
+  { path: '**', component: NotFoundComponent },
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
+
 ];
 
 @NgModule({

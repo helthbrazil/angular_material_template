@@ -29,7 +29,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MAT_BOTTOM_SHEET_DEFAULT_OPTIONS } from '@angular/material';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 /* TRANSLATE */
 import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
@@ -59,6 +59,7 @@ import { NgxGaugeModule } from 'ngx-gauge';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxchartsComponent } from './ngxcharts/ngxcharts.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     Grafico5Component,
     Grafico6Component,
     FluidComponent,
-    NgxchartsComponent
+    NgxchartsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -125,6 +127,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   entryComponents: [BottomSheetOverviewExampleSheet,
     DialogNoteComponent, ConfirmacaoDialogComponent],
   providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
     { provide: MAT_BOTTOM_SHEET_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }
   ],
